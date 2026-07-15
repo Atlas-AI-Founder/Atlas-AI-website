@@ -160,7 +160,9 @@ function sendMessage() {
     chat.innerHTML += "<p><strong>You:</strong> " + input + "</p>";
 
     let response = "Welcome to Atlas AI 👋 May I ask your name so I can help you better?";
-
+if (input.toLowerCase().includes("my name is")) {
+    response = "Nice to meet you! What type of business do you run?";
+}
     if (input.toLowerCase().includes("price")) {
         response = "Our AI solutions start from R999/month. We can customize a plan for your business.";
     }
