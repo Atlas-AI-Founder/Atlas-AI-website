@@ -159,7 +159,14 @@ function sendMessage() {
         return;
     }
 
-    chat.innerHTML += "<p><b>You:</b> " + input + "</p>";
+    chat.innerHTML += "<p><b>Atlas AI:</b> typing...</p>";
+
+setTimeout(function() {
+    chat.innerHTML = chat.innerHTML.replace(
+        "typing...",
+        response
+    );
+}, 1000);
 
     let message = input.toLowerCase();
 let response = "";
