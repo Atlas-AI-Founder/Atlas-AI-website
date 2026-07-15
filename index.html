@@ -182,7 +182,11 @@ function sendMessage() {
         "! 👋 What type of business do you run?";
 
     }
-
+document.getElementById("userInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
 
     else if (lead.business === "") {
 
