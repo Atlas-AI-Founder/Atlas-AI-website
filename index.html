@@ -143,23 +143,7 @@
     <h2>Talk to Atlas AI</h2>
 
     <div class="chat-box">
-        <p><strong>Atlas AI:</strong> Hi! 👋 How can I help your business today?</p>
-    </div>
-
-    <input type="text" placeholder="Type your message...">
-
-    <button onclick="sendMessage()">Send</button>
-</section>
-  <script>
-function sendMessage() {
-    let input = document.querySelector("input").value;
-    let chat = document.querySelector(".chat-box");
-
-    if (input === "") return;
-
-    chat.innerHTML += "<p><strong>You:</strong> " + input + "</p>";
-
-    function sendMessage() {
+       function sendMessage() {
   let input = document.getElementById("userInput").value;
   let chat = document.getElementById("chat");
 
@@ -169,37 +153,26 @@ function sendMessage() {
 
   if (!window.userName) {
     window.userName = input;
-      
-    response = "Nice to meet you, "  "! How can Atlas AI help you today?";
-  } else {
+    response = "Nice to meet you, " + window.userName + "! How can Atlas AI help you today?";
+  } 
+  else if (input.toLowerCase().includes("business") ||
+           input.toLowerCase().includes("company") ||
+           input.toLowerCase().includes("shop")) {
+
+    response = "Great! What would you like Atlas AI to help you with? For example: customer support, sales, or appointments.";
+  } 
+  else if (input.toLowerCase().includes("price")) {
+
+    response = "I can help you set up AI services for your business. What type of business do you run?";
+  } 
+  else {
     response = "Thanks for your message, " + window.userName + ". I'm here to help you and your business.";
   }
 
   chat.innerHTML += "<p><b>Atlas AI:</b> " + response + "</p>";
 
   document.getElementById("userInput").value = "";
-}
-if (input.toLowerCase().includes("my name is")) {
-    
-    if (input.toLowerCase().includes("business") || 
-        
-    input.toLowerCase().includes("company") ||
-    input.toLowerCase().includes("shop")) {
-    
-    response = "Great! What would you like Atlas AI to help you with? For example: customer support, sales, or appointments.";
-}
-}
-    if (input.toLowerCase().includes("price")) {
-        response = "Our AI solutions start from R999/month. We can customize a plan for your business.";
-    }
-
-    if (input.toLowerCase().includes("service")) {
-        response = "We offer AI Receptionists, Customer Support, Sales Assistants, and Appointment Scheduling.";
-    }
-
-    chat.innerHTML += "<p><strong>Atlas AI:</strong> " + response + "</p>";
-
-    document.querySelector("input").value = "";
+} 
 }
 </script>  
 </body>
