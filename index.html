@@ -161,23 +161,34 @@ function sendMessage() {
 
     chat.innerHTML += "<p><b>You:</b> " + input + "</p>";
 
-    let response = "";
+    let message = input.toLowerCase();
+let response = "";
 
-    if (!window.userName) {
-        window.userName = input;
-        response = "Nice to meet you, " + window.userName + "! How can I help you today?";
-    }
-    else if (input.toLowerCase().includes("price") || input.toLowerCase().includes("cost")) {
-        response = "Our pricing depends on the AI solution you need. Tell me about your business, and I'll recommend the best option.";
-    }
-    else if (input.toLowerCase().includes("hello") || input.toLowerCase().includes("hi")) {
-        response = "Hello " + window.userName + "! 👋 How can I help you today?";
-    }
-    else if (input.toLowerCase().includes("business")) {
-        response = "That's great! What type of business do you own?";
-    }
-    else {
-        response = "I'm sorry, I didn't quite understand that. Could you tell me more?";
+if (!window.userName) {
+    window.userName = input;
+    response = "Nice to meet you, " + window.userName + "! How can I help you today?";
+}
+else if (message.includes("hi") || message.includes("hello")) {
+    response = "Hello " + window.userName + "! 👋 Welcome back. How can I help you today?";
+}
+else if (message.includes("services")) {
+    response = "Atlas AI offers AI Customer Support, AI Receptionists, AI Sales Assistants, and AI Appointment Scheduling.";
+}
+else if (message.includes("price") || message.includes("cost")) {
+    response = "Our plans start from R999/month. We also offer Growth and Enterprise packages depending on your business needs.";
+}
+else if (message.includes("contact")) {
+    response = "You can contact us on WhatsApp at +27 68 888 6752 or email hello@atlasai.co.za.";
+}
+else if (message.includes("appointment")) {
+    response = "Atlas AI can help businesses book appointments automatically, 24/7.";
+}
+else if (message.includes("support")) {
+    response = "Our AI Customer Support answers customer questions instantly, day or night.";
+}
+else {
+    response = "I'm still learning. Could you ask me about our services, pricing, appointments, support, or contact details?";
+}
     }
 
     chat.innerHTML += "<p><b>Atlas AI:</b> " + response + "</p>";
