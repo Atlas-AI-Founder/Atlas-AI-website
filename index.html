@@ -151,7 +151,14 @@
 </section>
 
  <script>
+let lead = {
+    name: "",
+    business: "",
+    goal: ""
+};
+
 function sendMessage() {
+
     let input = document.getElementById("userInput").value;
     let chat = document.getElementById("chat");
 
@@ -159,69 +166,88 @@ function sendMessage() {
         return;
     }
 
-    chat.innerHTML += "<p><b>Atlas AI:</b> typing...</p>";
-
-setTimeout(function() {
-    chat.innerHTML = chat.innerHTML.replace(
-        "typing...",
-        response
-    );
-}, 1000);
+    chat.innerHTML += 
+    '<p class="user-message"><b>You:</b> ' + input + '</p>';
 
     let message = input.toLowerCase();
-let response = "";
+    let response = "";
 
-if (!window.userName) {
-    window.userName = input;
-    response = "Nice to meet you, " + window.userName + "! How can I help you today?";
-}
-else if (message.includes("hi") || message.includes("hello")) {
-    response = "Hello " + window.userName + "! 👋 Welcome back. How can I help you today?";
-}
-else if (message.includes("services")) {
-    response = "Atlas AI offers AI Customer Support, AI Receptionists, AI Sales Assistants, and AI Appointment Scheduling.";
-}
-else if (
-    message.includes("restaurant") ||
-    message.includes("shop") ||
-    message.includes("salon") ||
-    message.includes("business")
-) {
-    window.businessType = input;
-     response = "Great! Atlas AI can help " + window.businessType + " with customer support, sales, and appointment bookings. What would you like help with most?";
-}
-    
 
-else if (message.includes("price") || message.includes("cost")) {
-    response = "Our plans start from R999/month. We also offer Growth and Enterprise packages depending on your business needs.";
-}
-else if (message.includes("contact")) {
-    response = "You can contact us on WhatsApp at +27 68 888 6752 or email hello@atlasai.co.za.";
-}
-else if (message.includes("appointment")) {
-    response = "Atlas AI can help businesses book appointments automatically, 24/7.";
-}
+    if (lead.name === "") {
 
-else if (message.includes("support")) {
-    response = "Our AI Customer Support answers customer questions instantly, day or night.";
-}
-else if (
-    message.includes("interested") ||
-    message.includes("start") ||
-    message.includes("get started") ||
-    message.includes("ai employee")
-) {
-    response = "Great! I'd love to help you get started. What is your name and what type of business do you run?";
-}  
-else {
-    response = "I'm still learning. Could you ask me about our services, pricing, appointments, support, or contact details?";
-}
-    
+        lead.name = input;
 
-   chat.innerHTML += '<p class="ai-message"><b>Atlas AI:</b> ' + response + '</p>'; 
+        response = 
+        "Nice to meet you, " + lead.name +
+        "! 👋 What type of business do you run?";
+
+    }
+
+
+    else if (lead.business === "") {
+
+        lead.business = input;
+
+        response =
+        "Great! Atlas AI can help your " +
+        lead.business +
+        ". What would you like to improve most: customer support, sales, or appointments?";
+
+    }
+
+
+    else if (lead.goal === "") {
+
+        lead.goal = input;
+
+        response =
+        "Perfect! 🚀 I understand your needs. An Atlas AI specialist can help you set up the right AI employee solution.";
+
+    }
+
+
+    else if (message.includes("price") || message.includes("cost")) {
+
+        response =
+        "Our AI solutions start from R999/month. We offer Starter, Growth, and Enterprise packages.";
+
+    }
+
+
+    else if (message.includes("service")) {
+
+        response =
+        "Atlas AI provides AI Customer Support, AI Receptionists, AI Sales Assistants, and AI Appointment Scheduling.";
+
+    }
+
+
+    else if (message.includes("contact")) {
+
+        response =
+        "You can contact Atlas AI on WhatsApp: +27 68 888 6752 or email hello@atlasai.co.za.";
+
+    }
+
+
+    else {
+
+        response =
+        "Thanks for your message! I can help you with Atlas AI services, pricing, and solutions.";
+
+    }
+
+
+    chat.innerHTML += 
+    '<p class="ai-message"><b>Atlas AI:</b> ' + response + '</p>';
+
 
     document.getElementById("userInput").value = "";
+
+    chat.scrollTop = chat.scrollHeight;
+
 }
+
 </script>
 </body>   
 </html>
