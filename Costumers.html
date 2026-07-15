@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas AI Customers</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>👥 Atlas AI Customers</h1>
+    <p>Manage your businesses</p>
+</header>
+
+<main>
+
+<div class="card">
+
+<h2>Add New Business</h2>
+
+<input id="businessName" type="text" placeholder="Business Name">
+
+<input id="businessType" type="text" placeholder="Business Type">
+
+<input id="businessContact" type="text" placeholder="Contact Details">
+
+<button onclick="addCustomer()">Add Customer</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>Customer List</h2>
+
+<ul id="customerList">
+</ul>
+
+</div>
+
+
+<button onclick="history.back()">← Back</button>
+
+</main>
+
+
+<script>
+
+function addCustomer(){
+
+let name = document.getElementById("businessName").value;
+let type = document.getElementById("businessType").value;
+let contact = document.getElementById("businessContact").value;
+
+
+if(name === ""){
+alert("Please enter a business name");
+return;
+}
+
+
+let list = document.getElementById("customerList");
+
+
+let item = document.createElement("li");
+
+item.innerHTML = 
+name + " - " + type + " - " + contact;
+
+
+list.appendChild(item);
+
+
+document.getElementById("businessName").value="";
+document.getElementById("businessType").value="";
+document.getElementById("businessContact").value="";
+
+}
+
+</script>
+
+</body>
+</html>
