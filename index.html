@@ -148,8 +148,32 @@
 
     <input type="text" placeholder="Type your message...">
 
-    <button>Send</button>
-</section> 
+    <button onclick="sendMessage()">Send</button>
+</section>
+  <script>
+function sendMessage() {
+    let input = document.querySelector("input").value;
+    let chat = document.querySelector(".chat-box");
+
+    if (input === "") return;
+
+    chat.innerHTML += "<p><strong>You:</strong> " + input + "</p>";
+
+    let response = "Thanks for contacting Atlas AI! How can we help your business?";
+
+    if (input.toLowerCase().includes("price")) {
+        response = "Our AI solutions start from R999/month. We can customize a plan for your business.";
+    }
+
+    if (input.toLowerCase().includes("service")) {
+        response = "We offer AI Receptionists, Customer Support, Sales Assistants, and Appointment Scheduling.";
+    }
+
+    chat.innerHTML += "<p><strong>Atlas AI:</strong> " + response + "</p>";
+
+    document.querySelector("input").value = "";
+}
+</script>  
 </body>
     
 </html>
