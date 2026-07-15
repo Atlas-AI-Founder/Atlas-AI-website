@@ -264,3 +264,14 @@ section,
     border: none;
     cursor: pointer;
 }
+.user-message {
+    background: #dbeafe;
+    text-align: right;
+    margin-left: 40px;
+}
+
+.ai-message {
+    background: #e5e7eb;
+    text-align: left;
+    margin-right: 40px;
+}
