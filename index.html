@@ -139,7 +139,7 @@
 <footer>
     <p>© 2026 Atlas AI. All rights reserved.</p>
 </footer>
- <section>
+<section>
   <div class="chat-box">
     <div id="chat">
       <p><b>Atlas AI:</b> Hi! 👋 Welcome to Atlas AI. May I ask your name so I can help you better?</p>
@@ -148,8 +148,10 @@
     <input id="userInput" type="text" placeholder="Type your message...">
     <button onclick="sendMessage()">Send</button>
   </div>
-</section> 
-   <script> {
+</section>
+
+ <script>
+function sendMessage() {
   let input = document.getElementById("userInput").value;
   let chat = document.getElementById("chat");
 
@@ -164,8 +166,7 @@
   if (!window.userName) {
     window.userName = input;
     response = "Nice to meet you, " + window.userName + "! How can Atlas AI help you today?";
-  } 
-  else {
+  } else {
     response = "Thanks for your message, " + window.userName + ". I'm here to help your business grow. What would you like help with?";
   }
 
@@ -174,6 +175,5 @@
   document.getElementById("userInput").value = "";
 }
 </script>
-</body>
-    
+</body>   
 </html>
