@@ -169,7 +169,8 @@ function sendMessage() {
 
   if (!window.userName) {
     window.userName = input;
-    response = "Nice to meet you, " + input + "! How can Atlas AI help you today?";
+      
+    response = "Nice to meet you, "  "! How can Atlas AI help you today?";
   } else {
     response = "Thanks for your message, " + window.userName + ". I'm here to help you and your business.";
   }
@@ -187,7 +188,6 @@ if (input.toLowerCase().includes("my name is")) {
     
     response = "Great! What would you like Atlas AI to help you with? For example: customer support, sales, or appointments.";
 }
-    response = "Nice to meet you! What type of business do you run?";
 }
     if (input.toLowerCase().includes("price")) {
         response = "Our AI solutions start from R999/month. We can customize a plan for your business.";
