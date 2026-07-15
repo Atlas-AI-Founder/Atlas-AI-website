@@ -139,42 +139,16 @@
 <footer>
     <p>© 2026 Atlas AI. All rights reserved.</p>
 </footer>
-   <section class="chat-section">
-    <h2>Talk to Atlas AI</h2>
+ <section>
+  <div class="chat-box">
+    <div id="chat">
+      <p><b>Atlas AI:</b> Hi! 👋 Welcome to Atlas AI. May I ask your name so I can help you better?</p>
+    </div>
 
-    <div class="chat-box">
-       function sendMessage() {
-  let input = document.getElementById("userInput").value;
-  let chat = document.getElementById("chat");
-
-  chat.innerHTML += "<p><b>You:</b> " + input + "</p>";
-
-  let response = "";
-
-  if (!window.userName) {
-    window.userName = input;
-    response = "Nice to meet you, " + window.userName + "! How can Atlas AI help you today?";
-  } 
-  else if (input.toLowerCase().includes("business") ||
-           input.toLowerCase().includes("company") ||
-           input.toLowerCase().includes("shop")) {
-
-    response = "Great! What would you like Atlas AI to help you with? For example: customer support, sales, or appointments.";
-  } 
-  else if (input.toLowerCase().includes("price")) {
-
-    response = "I can help you set up AI services for your business. What type of business do you run?";
-  } 
-  else {
-    response = "Thanks for your message, " + window.userName + ". I'm here to help you and your business.";
-  }
-
-  chat.innerHTML += "<p><b>Atlas AI:</b> " + response + "</p>";
-
-  document.getElementById("userInput").value = "";
-} 
-}
-</script>  
+    <input id="userInput" type="text" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</section>   
 </body>
     
 </html>
