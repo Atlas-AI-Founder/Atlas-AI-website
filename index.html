@@ -180,6 +180,15 @@ else if (message.includes("hi") || message.includes("hello")) {
 }
 else if (message.includes("services")) {
     response = "Atlas AI offers AI Customer Support, AI Receptionists, AI Sales Assistants, and AI Appointment Scheduling.";
+    else if (
+    message.includes("restaurant") ||
+    message.includes("shop") ||
+    message.includes("salon") ||
+    message.includes("business")
+) {
+    window.businessType = input;
+    response = "Great! Atlas AI can help " + window.businessType + " with customer support, sales, and appointment bookings.";
+
 }
 else if (message.includes("price") || message.includes("cost")) {
     response = "Our plans start from R999/month. We also offer Growth and Enterprise packages depending on your business needs.";
