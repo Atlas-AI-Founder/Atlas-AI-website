@@ -159,7 +159,25 @@ function sendMessage() {
 
     chat.innerHTML += "<p><strong>You:</strong> " + input + "</p>";
 
-    let response = "Welcome to Atlas AI 👋 May I ask your name so I can help you better?";
+    function sendMessage() {
+  let input = document.getElementById("userInput").value;
+  let chat = document.getElementById("chat");
+
+  chat.innerHTML += "<p><b>You:</b> " + input + "</p>";
+
+  let response = "";
+
+  if (!window.userName) {
+    window.userName = input;
+    response = "Nice to meet you, " + input + "! How can Atlas AI help you today?";
+  } else {
+    response = "Thanks for your message, " + window.userName + ". I'm here to help you and your business.";
+  }
+
+  chat.innerHTML += "<p><b>Atlas AI:</b> " + response + "</p>";
+
+  document.getElementById("userInput").value = "";
+}
 if (input.toLowerCase().includes("my name is")) {
     
     if (input.toLowerCase().includes("business") || 
