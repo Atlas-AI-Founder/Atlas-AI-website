@@ -161,7 +161,12 @@ function sendMessage() {
 
     let response = "Welcome to Atlas AI 👋 May I ask your name so I can help you better?";
 if (input.toLowerCase().includes("my name is")) {
+    if (input.toLowerCase().includes("business") || 
+    input.toLowerCase().includes("company") ||
+    input.toLowerCase().includes("shop")) {
     
+    response = "Great! What would you like Atlas AI to help you with? For example: customer support, sales, or appointments.";
+}
     response = "Nice to meet you! What type of business do you run?";
 }
     if (input.toLowerCase().includes("price")) {
