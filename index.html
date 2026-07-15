@@ -165,10 +165,19 @@ function sendMessage() {
 
   if (!window.userName) {
     window.userName = input;
-    response = "Nice to meet you, " + window.userName + "! How can Atlas AI help you today?";
-  } else {
-    response = "Thanks for your message, " + window.userName + ". I'm here to help your business grow. What would you like help with?";
-  }
+    response = "Nice to meet you
+else if (input.toLowerCase().includes("price") || input.toLowerCase().includes("cost")) {
+  response = "Our pricing depends on the AI solution you need. Tell me about your business, and I'll recommend the best option.";
+}
+else if (input.toLowerCase().includes("hello") || input.toLowerCase().includes("hi")) {
+  response = "Hello " + window.userName + "! 👋 How can I help you today?";
+}
+else if (input.toLowerCase().includes("business")) {
+  response = "That's great! What type of business do you own?";
+}
+else {
+  response = "I'm sorry, I didn't quite understand that. Could you tell me more?";
+}  }
 
   chat.innerHTML += "<p><b>Atlas AI:</b> " + response + "</p>";
 
