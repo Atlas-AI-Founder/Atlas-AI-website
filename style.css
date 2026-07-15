@@ -240,7 +240,7 @@ section,
 #chat {
     height: 300px;
     overflow-y: auto;
-    background: white;
+    background: transparent;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 15px;
