@@ -192,6 +192,14 @@ else if (message.includes("appointment")) {
 }
 else if (message.includes("support")) {
     response = "Our AI Customer Support answers customer questions instantly, day or night."; {
+     else if (
+    message.includes("interested") ||
+    message.includes("start") ||
+    message.includes("get started") ||
+    message.includes("ai employee")
+) {
+    response = "Great! I'd love to help you get started. What is your name and what type of business do you run?";
+}   
 }
     
 }
