@@ -177,3 +177,35 @@ nav a:hover {
 html {
     scroll-behavior: smooth;
 }
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .services,
+    .pricing,
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .price-card,
+    .testimonial-card {
+        width: auto;
+    }
+
+}
