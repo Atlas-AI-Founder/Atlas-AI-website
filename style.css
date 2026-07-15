@@ -275,3 +275,15 @@ section,
     background: #005cc5;
     text-align: right;
 }
+.chat-box button {
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #00c853;
+    color: white;
+}
+
+.chat-box button:hover {
+    background: #00b248;
+}
