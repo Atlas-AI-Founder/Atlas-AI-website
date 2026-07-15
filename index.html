@@ -198,9 +198,19 @@ function sendMessage() {
 
         lead.goal = input;
 
-        response =
-"Perfect! 🚀 Based on your needs, Atlas AI can build the right AI employee for your business. Click the WhatsApp button on this page or contact us on +27 68 888 6752 to get started today.";
-
+        
+response =
+'Perfect! 🚀 Click the button below to continue on WhatsApp.<br><br>' +
+'<a href="https://wa.me/27688886752?text=' +
+encodeURIComponent(
+'Hi Atlas AI!\n\n' +
+'My name is ' + lead.name + '.\n' +
+'My business is ' + lead.business + '.\n' +
+'I need help with ' + lead.goal + '.\n\n' +
+"I'm interested in getting an AI employee."
+) +
+'" target="_blank">' +
+'<button>Continue on WhatsApp</button></a>';
     }
 
 
